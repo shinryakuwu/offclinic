@@ -3,6 +3,6 @@
 	<div>We are always happy to see you here, but hope you won't need to visit us too often.</div>
 	<div class="donations">We also accept blood donations 🩸</div>
 </div>
-<div class="home-button login-button">Log in</div>
-<div class="home-button register-button">Register</div>
+<%= link_to "Log in", new_patient_session_path, class:"home-button login-button" %>
+<%= link_to "Register", new_patient_registration_path, class:"home-button register-button" %>
 <div class="usagi"><%= image_tag 'nurseusagi.jpg', style: 'height:300px;width:auto;' %></div>

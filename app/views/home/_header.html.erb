@@ -1,9 +1,19 @@
 <div class="header">
 	<ul>
-		<li class="hoverable">Home</li>
+		<li class="hoverable">
+			<%= link_to "Home", root_path %>
+		</li>
 		<li class="hoverable">My Profile</li>
 		<li class="hoverable">My appointments</li>
 		<li class="hoverable">Search</li>
+
+		<li class="hoverable">
+			<% if patient_signed_in? %>
+				<%= link_to "Log out", destroy_patient_session_path, method: :delete %>
+			<% elsif doctor_signed_in? %>
+				<%= link_to "Log out", destroy_doctor_session_path, method: :delete %>
+			<% end %>
+		</li>
 		<li class="logo_header">OffClinic ✚ </li>
 	</ul>
 </div>

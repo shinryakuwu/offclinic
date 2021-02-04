@@ -1,0 +1,37 @@
+.users_form_wrapper {
+	width: 450px;
+	margin: 40px auto;
+	padding: 30px;
+}
+
+.iam_wrapper {
+	width: 251px;
+	margin: 50px auto;
+}
+
+.iam_button {
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.iam_patient {
+	padding: 30px 5px;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+
+.iam_doctor {
+	padding: 30px 8px;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+.doctor_form_wrapper {
+	border: 3px solid #86ccff;
+}
+
+.patient_form_wrapper {
+	border: 3px solid #fdb3ff;
+}
