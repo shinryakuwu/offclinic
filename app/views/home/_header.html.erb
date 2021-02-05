@@ -1,16 +1,22 @@
 <div class="header">
 	<ul>
+		<% unless patient_signed_in? or doctor_signed_in? %>
+			<li class="hoverable">
+				<%= link_to "Home", root_path %>
+			</li>
+		<% end %>
 		<li class="hoverable">
-			<%= link_to "Home", root_path %>
+			<%= link_to "My Profile", root_path %>
 		</li>
-		<li class="hoverable">My Profile</li>
 		<li class="hoverable">My appointments</li>
-		<li class="hoverable">Search</li>
-
+		<li class="hoverable">
+			<%= link_to "Search", doctors_path %>
+		</li>
 		<li class="hoverable">
 			<% if patient_signed_in? %>
 				<%= link_to "Log out", destroy_patient_session_path, method: :delete %>
-			<% elsif doctor_signed_in? %>
+			<% end %>	
+			<% if doctor_signed_in? %>
 				<%= link_to "Log out", destroy_doctor_session_path, method: :delete %>
 			<% end %>
 		</li>
