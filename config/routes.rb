@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  match '/patients/profile/:id', to: 'patients#show', via: 'get'
   match '/doctors', to: 'doctors#index', via: 'get'
   match '/doctors/profile/:id', to: 'doctors#show', via: 'get'
   devise_for :doctors, path: 'doctors', controllers: {

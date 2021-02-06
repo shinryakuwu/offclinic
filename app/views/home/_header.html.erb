@@ -5,21 +5,32 @@
 				<%= link_to "Home", root_path %>
 			</li>
 		<% end %>
-		<li class="hoverable">
-			<%= link_to "My Profile", root_path %>
-		</li>
+
+		<% if patient_signed_in? %>
+			<li class="hoverable">
+				<%= link_to 'My Profile', "/patients/profile/#{current_patient.id}" %>
+			</li>
+		<% end %>
+		<% if doctor_signed_in? %>
+			<li class="hoverable">
+				<%= link_to 'My Profile', "/doctors/profile/#{current_doctor.id}" %>
+			</li>
+		<% end %>
 		<li class="hoverable">My appointments</li>
 		<li class="hoverable">
 			<%= link_to "Search", doctors_path %>
 		</li>
-		<li class="hoverable">
-			<% if patient_signed_in? %>
+		<% if patient_signed_in? %>
+			<li class="hoverable">
 				<%= link_to "Log out", destroy_patient_session_path, method: :delete %>
-			<% end %>	
-			<% if doctor_signed_in? %>
+			</li>
+		<% end %>	
+		<% if doctor_signed_in? %>
+			<li class="hoverable">
 				<%= link_to "Log out", destroy_doctor_session_path, method: :delete %>
-			<% end %>
-		</li>
+			</li>
+		<% end %>
+		
 		<li class="logo_header">OffClinic ✚ </li>
 	</ul>
 </div>
