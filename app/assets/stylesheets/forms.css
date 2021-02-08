@@ -35,3 +35,37 @@
 .patient_form_wrapper {
 	border: 3px solid #fdb3ff;
 }
+
+#error_explanation {
+	color: #ff358e;
+}
+
+.notice {
+	background-color: #f095ff;
+	padding: 10px;
+	margin: 15px 0px;
+}
+
+.profile_form_wrapper {
+	width: 70%;
+	margin: 40px auto;
+	padding: 30px;
+}
+
+.profile_head {
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.profile_button {
+	background-color: #fdb3ff;
+	padding: 5px;
+	width: 118px;
+	text-align: center;
+	font-weight: 800;
+	border-radius: 10px;
+}
+
+.profile_button:hover {
+	background-color: #f095ff;
+}

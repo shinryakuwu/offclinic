@@ -32,6 +32,16 @@
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div>
 
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autocomplete: "your name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :category %><br />
+      <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Update" %>
     </div>

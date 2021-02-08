@@ -1,7 +1,14 @@
-<h1>Doctors#index</h1>
+<h2>Please select a doctor category:</h2>
+
+<%= form_tag(doctors_path method: :get) do %>
+  Category
+  <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <% @doctors.each do |doctor| %>
 <div class="doctor_list_element">
-  <%= doctor.id %> | <%= doctor.email %> 
+  <%= doctor.name %> | <%= doctor.category_name.capitalize %> | <%= doctor.email %>
   <%= link_to 'Show', "/doctors/profile/#{doctor.id}" %>
 </div>
 <% end %>

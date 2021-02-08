@@ -1,4 +1,9 @@
-<h1>Doctor Profile</h1>
-
-<h1>Id: <%= @doctor.id %></h1>
-<h5><%= @doctor.email%></h5>
+<div class="profile_form_wrapper doctor_form_wrapper ">
+	<h2 class="profile_head">Doctor Profile</h1>
+	<h2><%= @doctor.name %> | <%= @doctor.category.name.capitalize %></h1>
+	<div><b>Email: </b><%= @doctor.email%></div>
+	<div><b>Description: </b><%= @doctor.description ? @doctor.description : "No description" %></div>
+	<% if @doctor == current_doctor %>
+		<div class="hoverable profile_button"><%= link_to "Edit profile", edit_doctor_registration_path %></div>
+	<% end %>
+</div>
