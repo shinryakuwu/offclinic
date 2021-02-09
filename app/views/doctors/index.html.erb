@@ -1,10 +1,4 @@
-<h2>Please select a doctor category:</h2>
-
-<%= form_tag(doctors_path method: :get) do %>
-  Category
-  <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
-  <%= submit_tag 'Search' %>
-<% end %>
+<%= render 'search' %>
 
 <% @doctors.each do |doctor| %>
 <div class="doctor_list_element">

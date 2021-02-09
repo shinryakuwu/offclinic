@@ -69,3 +69,11 @@
 .profile_button:hover {
 	background-color: #f095ff;
 }
+
+.search_doctor form{
+	display: inline-block;
+}
+
+.search_doctor {
+	padding: 25px;
+}

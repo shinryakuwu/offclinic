@@ -1,0 +1,5 @@
+<h2 class="search_doctor">Please select a doctor category:
+<%= form_with url: doctors_search_path, method: :get do |form| %>
+  <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, @category.id) %>
+  <%= form.submit "Search" %>
+<% end %></h2>

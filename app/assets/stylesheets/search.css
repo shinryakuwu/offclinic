@@ -3,4 +3,10 @@
 	padding: 20px;
 	margin: 10px 50px;
 	border-radius: 10px;
+	display: flex;
+}
+
+.doctor_list_element a {
+	margin-left: auto;
+  	order: 2;
 }
