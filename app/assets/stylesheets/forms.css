@@ -64,6 +64,7 @@
 	text-align: center;
 	font-weight: 800;
 	border-radius: 10px;
+	margin-top: 15px;
 }
 
 .profile_button:hover {
@@ -76,4 +77,8 @@
 
 .search_doctor {
 	padding: 25px;
+}
+
+.field_with_errors {
+	display: inline-block;
 }

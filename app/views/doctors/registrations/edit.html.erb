@@ -34,12 +34,17 @@
 
     <div class="field">
       <%= f.label :name %><br />
-      <%= f.text_field :name, autocomplete: "your name" %>
+      <%= f.text_field :name, autocomplete: "name" %>
     </div>
 
     <div class="field">
       <%= f.label :category %><br />
       <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description, 'Description (optional)' %><br />
+      <%= f.text_field :description, autocomplete: "description" %>
     </div>
 
     <div class="actions">
