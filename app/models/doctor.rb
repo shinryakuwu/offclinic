@@ -8,4 +8,5 @@ class Doctor < ApplicationRecord
   belongs_to :category
   delegate :name, to: :category, prefix: true
   validates :category_id, presence: true
+  validates :name, presence: true, uniqueness: true
 end
