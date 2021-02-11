@@ -51,8 +51,8 @@
 	background-color: #7bb3ff;
 }
 
-.doctor_no_results {
-	margin-left: 25px;
+.no_results {
+	margin: 25px;
 }
 
 .appointments_head {

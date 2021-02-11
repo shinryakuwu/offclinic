@@ -1,6 +1,6 @@
 <h2 class="appointments_head">Appointments</h2>
 <% if @appointments.size < 1 %>
-	<div>You don't have any appointments.</div>
+	<div class="no_results">You don't have any appointments.</div>
 <% else %>
 	<% if @active_appointments.size > 0 %>
 		<div class="appointments_warning"> Attention! You have active appointments: <%= @active_appointments.size %>.<br>
@@ -13,7 +13,7 @@
 	  	<% if patient_signed_in? %>
 			<%= appointment.doctor_name %> | <%= appointment.doctor.category_name.capitalize %>
 		<% elsif doctor_signed_in? %>
-			<%= appointment.patient_id %>
+			<%= appointment.patient_name %>
 		<% end %>
 	  	<br>Status: <b><%= appointment.status.capitalize %></b>
 	  	<% if appointment.comment %>
