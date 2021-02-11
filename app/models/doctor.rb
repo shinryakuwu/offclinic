@@ -3,6 +3,8 @@ class Doctor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :appointments
+  has_many :patients, through: :appointments
   belongs_to :category
   delegate :name, to: :category, prefix: true
   validates :category_id, presence: true

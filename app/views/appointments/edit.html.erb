@@ -1,0 +1,46 @@
+<div class="doctor_form_wrapper appointment_wrapper">
+
+<% if @appointment.status == "to be accepted" && doctor_signed_in? && params[:accept] == "true" %>
+	<h2>Accept an appointment</h2>
+
+	<%= render 'show' %>
+
+	<%= form_for(@appointment) do |f| %>
+		<%= f.hidden_field :status, :value => "active" %>
+		<%= f.submit "Accept" %>
+	<% end %>
+<% elsif @appointment.status == "to be accepted" || (@appointment.status == "active" && patient_signed_in?)%>
+	<h2>Cancel an appointment</h2>
+
+	<%= render 'show' %>
+
+	<%= form_for(@appointment) do |f| %>
+		<%= f.label :comment, "Please leave a comment" %><br>
+		<%= f.text_field :comment %><br>
+		<% if patient_signed_in? %>
+			<%= f.hidden_field :status, :value => "canceled by patient" %>
+		<% elsif doctor_signed_in? %>
+			<%= f.hidden_field :status, :value => "canceled by doctor" %>
+		<% end %>	
+		<%= f.submit "Submit" %>
+	<% end %>
+<% end %>
+
+<% if @appointment.status == "active" && doctor_signed_in? %>
+	<h2>Close an appointment</h2>
+
+	<%= render 'show' %>
+
+	<%= form_for(@appointment) do |f| %>
+		<%= f.label :comment, "Please leave a recommendation" %><br>
+		<%= f.text_field :comment %><br>
+		<%= f.hidden_field :status, :value => "completed" %>
+		<%= f.submit "Submit" %>
+	<% end %>
+<% end %>
+
+<%= link_to 'Back', appointments_path %>
+
+</div>
+
+<%= params.inspect %>

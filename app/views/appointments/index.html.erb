@@ -1,0 +1,36 @@
+<h2 class="appointments_head">Appointments</h2>
+<% if @appointments.size < 1 %>
+	<div>You don't have any appointments.</div>
+<% else %>
+	<% if @active_appointments.size > 0 %>
+		<div class="appointments_warning"> Attention! You have active appointments: <%= @active_appointments.size %>.<br>
+			Please make sure not to miss them.
+		</div>
+	<% end %>
+	<% @appointments.reverse_each do |appointment| %>
+	<div class="appointment_list_element">
+	  <div class="appointment_info"> <%= appointment.time %> | 
+	  	<% if patient_signed_in? %>
+			<%= appointment.doctor_name %> | <%= appointment.doctor.category_name.capitalize %>
+		<% elsif doctor_signed_in? %>
+			<%= appointment.patient_id %>
+		<% end %>
+	  	<br>Status: <b><%= appointment.status.capitalize %></b>
+	  	<% if appointment.comment %>
+	  		<br>Comment: <%= appointment.comment %>
+	  	<% end %>
+	  </div>
+	  <div class="appointment_buttons">
+	  <% if appointment.status == "to be accepted" && doctor_signed_in? %>
+	  	<%= link_to 'Accept', edit_appointment_path(appointment, :accept => true), class:"list_blue_button" %>
+	  <% end %>
+	  <% if appointment.status == "to be accepted" || (appointment.status == "active" && patient_signed_in?)%>
+	  	<%= link_to 'Cancel', edit_appointment_path(appointment), class:"list_pink_button" %>
+	  <% end %>
+	  <% if appointment.status == "active" && doctor_signed_in? %>
+	  	<%= link_to 'Close', edit_appointment_path(appointment), class:"list_blue_button" %>
+	  <% end %>
+	  </div>
+	</div>
+	<% end %>
+<% end %>

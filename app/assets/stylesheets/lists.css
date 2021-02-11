@@ -1,0 +1,67 @@
+.doctor_list_element, .appointment_list_element {
+	padding: 20px;
+	margin: 10px 50px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.doctor_list_element {
+	border: 3px solid #86ccff;
+}
+
+.appointment_list_element {
+	border: 3px solid #fdb3ff;
+}
+
+.doctor_list_element a, .appointment_list_element a {
+	margin-left: auto;
+  	order: 2;
+  	text-decoration: none;
+	color: #fff;
+	padding: 6px;
+	font-weight: 800;
+	border-radius: 6px;
+	max-height: 30px;
+}
+
+.appointment_info {
+	display: inline-block;
+}
+
+.appointment_buttons {
+	display: inline-block;
+	margin-left: auto;
+  	order: 2;
+}
+
+.list_pink_button {
+	background-color: #fdb3ff;
+}
+
+.list_pink_button:hover {
+	background-color: #f095ff;
+}
+
+.list_blue_button {
+	background-color: #86ccff;
+}
+
+.list_blue_button:hover {
+	background-color: #7bb3ff;
+}
+
+.doctor_no_results {
+	margin-left: 25px;
+}
+
+.appointments_head {
+	text-align: center;
+	padding: 15px;
+}
+
+.appointments_warning {
+	text-align: center;
+	color: #7bb3ff;
+	margin-bottom: : 10px;
+}

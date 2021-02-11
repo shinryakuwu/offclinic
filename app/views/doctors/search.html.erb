@@ -1,7 +1,7 @@
 <%= render 'search' %>
 
 <% if @doctors.size < 1 %>
-	<div>No results</div>
+	<div class="doctor_no_results">No results</div>
 <% else %>
 	<% @doctors.each do |doctor| %>
 	<div class="doctor_list_element">

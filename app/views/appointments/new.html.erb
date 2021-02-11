@@ -1,0 +1,12 @@
+<div class="doctor_form_wrapper appointment_wrapper">
+	<h2>Apply for appointment with <%= @doctor.name %></h2>
+
+	<%= form_for(@appointment) do |f| %>
+		<%= f.label :time, "Please select date and time that would be convenient for you:" %> <br>
+		<%= f.datetime_select(:time) %>
+		<%= f.hidden_field :doctor_id, :value => @doctor.id %>
+		<%= f.hidden_field :patient_id, :value => current_patient.id %>
+		<%= f.hidden_field :status, :value => "to be accepted" %>
+		<%= f.submit "Submit" %>
+	<% end %>
+</div>

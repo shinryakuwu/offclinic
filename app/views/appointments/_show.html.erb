@@ -1,0 +1,9 @@
+<div>
+	<% if patient_signed_in? %>
+		<%= @appointment.doctor_name %> | <%= @appointment.doctor.category_name.capitalize %>
+		<%= link_to 'View profile', "/doctors/profile/#{@appointment.doctor_id}", :target => "_blank" %><br>
+	<% elsif doctor_signed_in? %>
+		<%= @appointment.patient_id %> <%= link_to 'View profile', "/patients/profile/#{@appointment.patient_id}", :target => "_blank" %><br>
+	<% end %>
+	<%= @appointment.time %><br><b>Status: </b><%= @appointment.status.capitalize %>
+</div>

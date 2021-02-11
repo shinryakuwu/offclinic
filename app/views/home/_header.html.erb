@@ -16,7 +16,11 @@
 				<%= link_to 'My Profile', "/doctors/profile/#{current_doctor.id}" %>
 			</li>
 		<% end %>
-		<li class="hoverable">My appointments</li>
+		<% if doctor_signed_in? or patient_signed_in? %>
+			<li class="hoverable">
+				<%= link_to 'My appointments', appointments_path %>
+			</li>
+		<% end %>
 		<li class="hoverable">
 			<%= link_to "Search", doctors_path %>
 		</li>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :appointments, only: [:edit, :index, :update, :new, :create]
   match '/patients/profile/:id', to: 'patients#show', via: 'get'
   match '/doctors', to: 'doctors#index', via: 'get'
   match '/doctors/search', to: 'doctors#search', via: 'get'

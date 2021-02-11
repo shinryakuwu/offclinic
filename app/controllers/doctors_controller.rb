@@ -5,7 +5,7 @@ class DoctorsController < ApplicationController
   end
 
   def show
-	@doctor = Doctor.find_by_id(params[:id])
+	  @doctor = Doctor.find_by_id(params[:id])
   end
 
   def search

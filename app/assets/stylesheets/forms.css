@@ -41,8 +41,8 @@
 }
 
 .notice {
-	background-color: #f095ff;
-	padding: 10px;
+	background-color: #f0c3ff;
+	padding: 10px 40px;
 	margin: 15px 0px;
 }
 
@@ -81,4 +81,12 @@
 
 .field_with_errors {
 	display: inline-block;
+}
+
+.appointment_wrapper {
+	width: 80%;
+	padding: 20px;
+	margin: 30px auto;
+	text-align: center;
+	line-height: 1.8;
 }

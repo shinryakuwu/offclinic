@@ -1,4 +1,8 @@
-<h1>Patient Profile</h1>
-
-<h1>Id: <%= @patient.id %></h1>
-<h5><%= @patient.email%></h5>
+<div class="profile_form_wrapper patient_form_wrapper">
+	<h2 class="profile_head">Patient Profile</h1>
+	<h2><%= @patient.id %></h1>
+	<div><b>Email: </b><%= @patient.email%></div>
+	<% if @patient == current_patient %>
+		<div class="hoverable profile_button"><%= link_to "Edit profile", edit_patient_registration_path %></div>
+	<% end %>
+</div>

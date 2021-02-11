@@ -6,4 +6,7 @@
 	<% if @doctor == current_doctor %>
 		<div class="hoverable profile_button"><%= link_to "Edit profile", edit_doctor_registration_path %></div>
 	<% end %>
+	<% if patient_signed_in? %>
+		<div class="hoverable profile_button"><%= link_to "Apply", new_appointment_path(:doctor_id => @doctor.id) %></div>
+	<% end %>
 </div>

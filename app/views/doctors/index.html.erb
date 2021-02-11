@@ -3,6 +3,6 @@
 <% @doctors.each do |doctor| %>
 <div class="doctor_list_element">
   <%= doctor.name %> | <%= doctor.category_name.capitalize %> | <%= doctor.email %>
-  <%= link_to 'Show', "/doctors/profile/#{doctor.id}" %>
+  <%= link_to 'Show', "/doctors/profile/#{doctor.id}", class:"list_pink_button" %>
 </div>
 <% end %>
