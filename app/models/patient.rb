@@ -6,4 +6,5 @@ class Patient < ApplicationRecord
   has_many :appointments
   has_many :doctors, through: :appointments
   validates :name, presence: true, uniqueness: true
+  mount_uploader :avatar, AvatarUploader
 end

@@ -1,8 +1,22 @@
 <div class="profile_form_wrapper doctor_form_wrapper ">
-	<h2 class="profile_head">Doctor Profile</h1>
-	<h2><%= @doctor.name %> | <%= @doctor.category.name.capitalize %></h1>
-	<div><b>Email: </b><%= @doctor.email%></div>
-	<div><b>Description: </b><%= @doctor.description ? @doctor.description : "No description" %></div>
+	<h2 class="profile_head">Doctor Profile</h2>
+
+	<div class="profile_elements">
+		<div class="profile-avatar">
+			<div class="avatar-border">
+				<% if @doctor.avatar? %>
+					<%= image_tag @doctor.avatar.url(:thumb) %>
+				<% else %>
+					<%= image_tag "default_avatar.png" %>
+				<% end %>
+			</div>
+		</div>
+		<div class="profile_info">
+			<h2><%= @doctor.name %> | <%= @doctor.category.name.capitalize %></h2>
+			<div><b>Email: </b><%= @doctor.email%></div>
+			<div><b>Description: </b><%= @doctor.description ? @doctor.description : "No description" %></div>
+		</div>
+	</div>
 	<% if @doctor == current_doctor %>
 		<div class="hoverable profile_button"><%= link_to "Edit profile", edit_doctor_registration_path %></div>
 	<% end %>

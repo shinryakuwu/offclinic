@@ -1,7 +1,7 @@
 <div class="users_form_wrapper doctor_form_wrapper">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
     <%= render "doctors/shared/error_messages", resource: resource %>
 
     <div class="field">
@@ -45,6 +45,11 @@
     <div class="field">
       <%= f.label :description, 'Description (optional)' %><br />
       <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :avatar %><br />
+      <%= f.file_field :avatar %>
     </div>
 
     <div class="actions">

@@ -9,4 +9,5 @@ class Doctor < ApplicationRecord
   delegate :name, to: :category, prefix: true
   validates :category_id, presence: true
   validates :name, presence: true, uniqueness: true
+  mount_uploader :avatar, AvatarUploader
 end
