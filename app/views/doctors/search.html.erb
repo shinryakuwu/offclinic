@@ -4,9 +4,10 @@
 	<div class="no_results">No results</div>
 <% else %>
 	<% @doctors.each do |doctor| %>
-	<div class="doctor_list_element">
-	  <%= doctor.name %> | <%= doctor.category_name.capitalize %> | <%= doctor.email %>
-	  <%= link_to 'Show', "/doctors/profile/#{doctor.id}" %>
-	</div>
+		<div class="doctor_list_element">
+			<%= avatar_for(doctor) %>
+			<div class="doctor_list_info"><%= doctor.name %> | <%= doctor.category_name.capitalize %> | <%= doctor.email %></div> 
+			<%= link_to 'Show', "/doctors/profile/#{doctor.id}", class:"list_pink_button" %>
+		</div>
 	<% end %>
 <% end %>

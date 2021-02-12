@@ -9,12 +9,18 @@
 	<% end %>
 	<% @appointments.reverse_each do |appointment| %>
 	<div class="appointment_list_element">
-	  <div class="appointment_info"> <%= appointment.time %> | 
+		<% if patient_signed_in? %>
+			<%= avatar_for(appointment.doctor) %>
+		<% elsif doctor_signed_in? %>
+			<%= avatar_for(appointment.patient) %>
+		<% end %>
+	  <div class="appointment_info"> 
 	  	<% if patient_signed_in? %>
-			<%= appointment.doctor_name %> | <%= appointment.doctor.category_name.capitalize %>
+			<%= appointment.doctor_name %> | <%= appointment.doctor.category_name.capitalize %> | 
 		<% elsif doctor_signed_in? %>
 			<%= appointment.patient_name %>
 		<% end %>
+		<%= appointment.time %>
 	  	<br>Status: <b><%= appointment.status.capitalize %></b>
 	  	<% if appointment.comment %>
 	  		<br>Comment: <%= appointment.comment %>

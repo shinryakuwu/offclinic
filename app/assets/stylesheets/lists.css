@@ -65,3 +65,16 @@
 	color: #7bb3ff;
 	margin-bottom: : 10px;
 }
+
+.doctor_list_element img, .appointment_list_element img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.doctor_list_info, .appointment_info {
+	padding: 0 12px;
+}

@@ -4,11 +4,7 @@
 	<div class="profile_elements">
 		<div class="profile-avatar">
 			<div class="avatar-border">
-				<% if @doctor.avatar? %>
-					<%= image_tag @doctor.avatar.url(:thumb) %>
-				<% else %>
-					<%= image_tag "default_avatar.png" %>
-				<% end %>
+				<%= avatar_for(@doctor) %>
 			</div>
 		</div>
 		<div class="profile_info">
