@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Doctors::RegistrationsController < Devise::RegistrationsController
+  include Accessible
+  skip_before_action :check_role, except: [:new, :create]
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
