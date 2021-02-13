@@ -36,6 +36,10 @@
 	border: 3px solid #fdb3ff;
 }
 
+.admin_form_wrapper {
+	border: 3px solid #f095ff;
+}
+
 #error_explanation {
 	color: #ff358e;
 }
@@ -89,6 +93,10 @@
 	margin: 30px auto;
 	text-align: center;
 	line-height: 1.8;
+}
+
+.appointment_wrapper input {
+	margin: 5px 0;
 }
 
 .profile_info {

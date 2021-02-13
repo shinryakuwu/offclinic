@@ -18,7 +18,7 @@
 	  	<% if patient_signed_in? %>
 			<%= appointment.doctor_name %> | <%= appointment.doctor.category_name.capitalize %> | 
 		<% elsif doctor_signed_in? %>
-			<%= appointment.patient_name %>
+			<%= appointment.patient_name %> | 
 		<% end %>
 		<%= appointment.time %>
 	  	<br>Status: <b><%= appointment.status.capitalize %></b>

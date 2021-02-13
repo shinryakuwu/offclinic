@@ -11,6 +11,17 @@ class ApplicationController < ActionController::Base
 	  end
 	end
 
+	def current_ability
+	  if patient_signed_in?
+	    @current_ability ||= Ability.new(current_patient)
+	  elsif doctor_signed_in?
+	    @current_ability ||= Ability.new(current_doctor)
+	  elsif admin_signed_in?
+	  	@current_ability ||= Ability.new(current_admin)
+	  end
+	end
+
+
 	protected
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :category_id])
