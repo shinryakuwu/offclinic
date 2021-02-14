@@ -10,7 +10,7 @@
 		<div class="profile_info">
 			<h2><%= @doctor.name %> | <%= @doctor.category.name.capitalize %></h2>
 			<div><b>Email: </b><%= @doctor.email%></div>
-			<div><b>Description: </b><%= @doctor.description ? @doctor.description : "No description" %></div>
+			<div><b>Description: </b><%= (@doctor.description && @doctor.description.size > 0) ? @doctor.description : "No description" %></div>
 		</div>
 	</div>
 	<% if @doctor == current_doctor %>
