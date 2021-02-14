@@ -22,7 +22,7 @@
 		<% end %>
 		<%= appointment.time %>
 	  	<br>Status: <b><%= appointment.status.capitalize %></b>
-	  	<% if appointment.comment %>
+	  	<% if appointment.comment && appointment.comment.size > 0 %>
 	  		<br>Comment: <%= appointment.comment %>
 	  	<% end %>
 	  </div>

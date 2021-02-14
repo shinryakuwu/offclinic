@@ -21,6 +21,16 @@ class ApplicationController < ActionController::Base
 	  end
 	end
 
+	rescue_from CanCan::AccessDenied do |exception|
+		if doctor_signed_in?
+			@path = "/doctors/profile/#{current_doctor.id}"
+		elsif patient_signed_in?
+			@path = "/patients/profile/#{current_patient.id}"
+		else @path = root_path
+		end	
+	  redirect_to @path, :notice => exception.message
+	end
+
 
 	protected
 	def configure_permitted_parameters

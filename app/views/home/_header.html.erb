@@ -21,9 +21,11 @@
 				<%= link_to 'My appointments', appointments_path %>
 			</li>
 		<% end %>
-		<li class="hoverable">
-			<%= link_to "Search", doctors_path %>
-		</li>
+		<% if doctor_signed_in? or patient_signed_in? %>
+			<li class="hoverable">
+				<%= link_to "Search", doctors_path %>
+			</li>
+		<% end %>
 		<% if patient_signed_in? %>
 			<li class="hoverable">
 				<%= link_to "Log out", destroy_patient_session_path, method: :delete %>

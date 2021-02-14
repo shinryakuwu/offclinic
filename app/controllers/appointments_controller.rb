@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  include ApplicationHelper
+  before_action :authenticate_a_user
   load_and_authorize_resource
   before_action :many_active_redirect, only: [:edit]
 
@@ -24,6 +26,8 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.patient_id = current_patient.id
+    @appointment.status = "to be accepted"
     if @appointment.save
       redirect_to appointments_path, notice: 'Appointment request was successfully created.'
     else
@@ -43,7 +47,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-      params.require(:appointment).permit(:time, :status, :doctor_id, :patient_id, :comment)
+      params.require(:appointment).permit(:time, :status, :comment, :doctor_id)
   end
 
   def many_active_redirect

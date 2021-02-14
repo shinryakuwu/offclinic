@@ -1,6 +1,8 @@
 class DoctorsController < ApplicationController
+  include ApplicationHelper
+  before_action :authenticate_a_user
   load_and_authorize_resource
-  
+
   def index
     @doctors = Doctor.all
     @category = Category.first

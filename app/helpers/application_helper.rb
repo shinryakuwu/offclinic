@@ -8,4 +8,10 @@ module ApplicationHelper
 		end
 	end
 
+	def authenticate_a_user
+	    unless doctor_signed_in? || patient_signed_in?
+	      authenticate_patient!
+	    end
+	end
+
 end
