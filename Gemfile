@@ -32,7 +32,7 @@ gem 'devise'
 gem 'carrierwave', '~> 2.0'
 gem 'cloudinary'
 gem 'mini_magick', '4.11.0'
-gem 'rails_admin', '~> 2.0'
+gem 'rails_admin', '2.0.2'
 gem 'cancancan'
 
 group :development, :test do
