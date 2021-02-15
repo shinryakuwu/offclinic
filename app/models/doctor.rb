@@ -8,6 +8,7 @@ class Doctor < ApplicationRecord
   belongs_to :category
   delegate :name, to: :category, prefix: true
   validates :category_id, presence: true
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true, length: { maximum: 150 }
+  validates :description, length: { maximum: 1500 }
   mount_uploader :avatar, AvatarUploader
 end

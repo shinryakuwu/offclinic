@@ -10,6 +10,7 @@ class Ability
       if user.is_a?(Patient)
         can :manage, Patient, id: user.id
         can :read, Doctor
+        can :search, Doctor
         can :create, Appointment
         can :manage, Appointment, patient_id: user.id
       elsif user.is_a?(Doctor)
