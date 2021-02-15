@@ -5,6 +5,6 @@ class Patient < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :appointments
   has_many :doctors, through: :appointments
-  validates :name, presence: true, uniqueness: true, length: { maximum: 150 }
+  validates :name, presence: true, length: { maximum: 150 }
   mount_uploader :avatar, AvatarUploader
 end
